@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fyle: Tax Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="top-border">
+      <span class="top-border-circle"></span>
+      <span class="top-border-circle"></span>
+      <span class="top-border-circle"></span>
+    </div>
+    <div class="container">
+      <div class="box">
+        <form id="form">
+          <div class="input-item">
+            <div class="label-container">
+              <label for="annual-income">Enter gross annual income</label>
+              <i
+                class="fa-regular fa-circle-question"
+                onclick="{questionMarkClickHandler(0)}"
+              ></i>
+              <span class="hiddenDetails"
+                >Gross annual income is your total salary in a year before any
+                deductions.</span
+              >
+            </div>
+
+            <div class="input-container">
+              <input
+                type="text"
+                name="annual-income"
+                id="annual-income"
+                placeholder="Enter gross annual income"
+                required
+              />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <div class="string-data">Please enter numbers only.</div>
+            </div>
+          </div>
+
+          <div class="input-item">
+            <div class="label-container">
+              <label for="extra-income">Enter extra income</label>
+              <i
+                class="fa-regular fa-circle-question"
+                onclick="{questionMarkClickHandler(1)}"
+              ></i>
+              <span class="hiddenDetails"
+                >Extra income is the extra amount you get from under the
+                table.</span
+              >
+            </div>
+
+            <div class="input-container">
+              <input
+                type="text"
+                name="extra-income"
+                id="extra-income"
+                placeholder="Enter extra income"
+                required
+              />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <div class="string-data">Please enter numbers only.</div>
+            </div>
+          </div>
+
+          <div class="input-item">
+            <div class="label-container">
+              <label for="age-group">Enter age group</label>
+              <i
+                class="fa-regular fa-circle-question"
+                onclick="{questionMarkClickHandler(2)}"
+              ></i>
+              <span class="hiddenDetails"
+                >Age Group helps to understand some of the age taxes.</span
+              >
+            </div>
+
+            <select name="age-group" id="age-group" required>
+              <option disabled selected value>-- Select an option --</option>
+              <option value="lessthan40">Less than 40 (age &lt; 40)</option>
+              <option value="between40and60">
+                Between 40 and 60 (40 &le; age &lt; 60)
+              </option>
+              <option value="greaterthan60">
+                Greater than or eqal to 60 (age &ge; 60)
+              </option>
+            </select>
+          </div>
+          <div class="input-item">
+            <div class="label-container">
+              <label for="total-deductions"
+                >Enter total applicable deductions</label
+              >
+              <i
+                class="fa-regular fa-circle-question"
+                onclick="{questionMarkClickHandler(3)}"
+              ></i>
+              <span class="hiddenDetails" style="left: 60%"
+                >All the taxes and deductions from your salary.</span
+              >
+            </div>
+
+            <div class="input-container">
+              <input
+                type="text"
+                name="total-deductions"
+                id="total-deductions"
+                placeholder="Enter total applicable deductions"
+              />
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <div class="string-data">Please enter numbers only.</div>
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class=" box result-box">
+        <h2>Your overall income will be</h2>
+        <span id="overall-income">000.00</span>
+        <p>after tax deductions</p>
+        <div id="result-box-close-btn">Close</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/bab29e4943.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
